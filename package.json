@@ -1,0 +1,16 @@
+{
+  "name": "sampleextension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "evernote": "^2.0.5",
+    "express": "^4.17.1"
+  }
+}
