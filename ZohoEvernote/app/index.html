@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+        
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/zohoSDK.js"></script>
+    <script src="js/search.js"></script>
+    
+</head>
+
+<body>
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <div class="card" id="searchPage" style="display: block;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-10 col-sm-8 col-12">
+                                <!-- Search form -->
+                                <div class="form-group has-search">
+                                    <span class="fa fa-search form-control-feedback"></span>
+                                    <input type="text" class="form-control" id="search" placeholder="Search">
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-12 mt text-md-left text-sm-center text-center">
+                                <button type="button" class="hello btn btn-outline-secondary">Create New Note</button>
+                            </div>
+                        </div>
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <div class="row">
+                                    <p class="prah" >Please "Search for Evernotes" or "Create New Note" to link it with
+                                        the lead</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="form-search" style="display: none;">
+                            <div class="card-header border-0 bg-transparent">
+                                <div class="col-md-12 col-sm-12 col-12"> 
+                                    <div class="row">
+                                        <p class="prah"><button type="button" class="front-page"><i class="fa fa-angle-left pr-2" aria-hidden="true"></button></i>Search Results for  "Sample"</p>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="card-body">
+                                <div class="row ml-4">
+                                    <div class="col-md-9 col-sm-12 col-12"> 
+                                        <p class="prah">Sample Note</p>
+                                    </div> 
+                                    <div class="col-md-3 col-sm-12 col-12"> 
+                                        <p class="prah">Created by: Jonh</p>
+                                    </div> 
+                                </div>
+                                <div class="row ml-4 mt-4">
+                                    <div class="col-md-9 col-sm-12 col-12"> 
+                                        <p class="prah">Sample Note 2</p>
+                                    </div> 
+                                    <div class="col-md-3 col-sm-12 col-12"> 
+                                        <p class="prah">Created by: Jonh</p>
+                                    </div> 
+                                </div>
+                                <div class="row ml-4 mt-4">
+                                    <div class="col-md-9 col-sm-12 col-12"> 
+                                        <p class="prah">Sample Note 2</p>
+                                    </div> 
+                                    <div class="col-md-3 col-sm-12 col-12"> 
+                                        <p class="prah">Created by: Jonh</p>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-right bg-transparent mt-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-12">
+                                        <button type="button" class="btn btn-outline-secondary">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <div class="card" id="createNewPage" style="display: none;">
+                    <div class="card-header border-0">
+                        <div class="col-md-12 col-sm-12 col-12">
+                            <div class="row">
+                                <p class="prah"><button type="button" class="goToSearch"><i class="fa fa-angle-left pr-2" aria-hidden="true"></i></button>Create New Note</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <div class="form-group has-search">
+                                    <input type="text" class="form-control" id="noteTitle" placeholder="Note Title">
+                                </div>
+                                <p class="details">Details</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-9 col-sm-12 col-12  ml-3">
+                                <div class="row">
+                                    <table class="table table-bordered text-left">
+                                        <tbody>
+                                            <tr>
+                                                <th>Class/Project</th>
+                                                <td><INPUT TYPE="TEXT" NAME="Project"   id ="noteContent" style="width:100%;"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date/Time/Location</th>
+                                                <td><INPUT TYPE="DATE" NAME="Date" style="width:100%;"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Goal</th>
+                                                <td><INPUT TYPE="TEXT" NAME="Goal" style="width:100%;"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Attendees</th>
+                                                <td><INPUT TYPE="TEXT" NAME="Attendees" style="width:100%;"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <hr>
+                                <p class="pro">Pro-Tip</p>
+                                <p class="note">The term originally referred to messages sent using the Short Message Service (SMS). It
+                                    has grown beyond alphanumeric <br> NOTE: The term originally referred to messages sent using the
+                                    Short Message Service</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <p class="details">Follow Up</p>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-9 col-sm-12 col-12 ml-3">
+                                <div class="row">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-white bg-success">Task</th>
+                                                <th class="text-white bg-success">Responsible</th>
+                                                <th class="text-white bg-success">Completed?</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td><label><input type="checkbox" value=""></label></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td><label><input type="checkbox" value=""></label></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td><label><input type="checkbox" value=""></label></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td><label><input type="checkbox" value=""></label></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td><label><input type="checkbox" value=""></label></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <div class="row">
+                           <!-- <div id="divpopup" style="display: none;">Successfully added New Note</div> -->
+                            <div class="col-md-12 col-sm-12 col-12">                   
+                                <!-- <button type="button" class="addNote btn btn-outline-secondary" href="#popup1">Save
+                                </button> -->
+                                <a class="button" href="#popup1">Save</a>
+                            </div>
+                            <div id="popup1" class="overlay">
+                                <div class="popup">
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        Successfully added New Note
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+<style>
+    body {
+        font-family: "ProximaNovaRegular", sans-serif;
+    }
+
+    .mt {
+        margin-top: 9px;
+    }
+
+    .table {
+        width: 96%;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-bottom: 1px solid #ced4da ! important;
+        border-radius: 0px;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: none;
+        outline: 0;
+        box-shadow: none
+    }
+
+     
+     /* Popup container */
+   /* .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+*/
+    /* The actual popup (appears on top) */
+    /*.popup .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }*/
+
+    /* Popup arrow */
+    /*.popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }*/
+
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    /*.popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s
+    }*/
+
+    /* Add animation (fade in the popup) */
+    /*@-webkit-keyframes fadeIn {
+      from {opacity: 0;} 
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity:1 ;}
+    }*/
+
+    .button{
+      font-size: 1em;
+      padding: 10px;
+      color: #fff;
+      border: 2px solid #06D85F;
+      border-radius: 20px/50px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    .button:hover {
+      background: #06D85F;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      width: 30%;
+      position: relative;
+      transition: all 5s ease-in-out;
+    }
+
+    ./*popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }*/
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06D85F;
+    }
+    .popup .content {
+      max-height: 30%;
+      overflow: auto;
+    }
+
+    @media screen and (max-width: 700px){
+      .popup{
+        width: 70%;
+      }
+    }
+
+   /* Bootstrap 4 text input with search icon */
+
+    .has-search .form-control {
+        padding-left: 2.375rem;
+    }
+
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+    }
+
+    .prah {
+        font-family: "ProximaNovaRegular", sans-serif;
+        color: #ddd;
+        text-align: center !important;
+        margin: 0 auto;
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 5px;
+        border-radius: 10px;
+        line-height: 1.2;
+    }
+
+    .btn-outline-secondary {
+        color: #000000bd;
+        background-color: transparent;
+        background-image: none;
+        border-color: #6c757da8;
+    }
+</style>
+
+</html>
